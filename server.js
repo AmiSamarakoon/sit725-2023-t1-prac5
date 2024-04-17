@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/cat', cat)
+app.use('/api/cat', cat)
 app.use('/', index)
  
 app.listen(port, async() => {

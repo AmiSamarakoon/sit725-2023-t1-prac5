@@ -24,7 +24,7 @@ function submitForm() {
 }
 
 function getCats() {
-    $.get('cat', (response) => {
+    $.get('api/cat', (response) => {
         console.log(response);
         if (response) {
             addCards(response);
@@ -34,7 +34,7 @@ function getCats() {
 
 function postCat(cat) {
     $.ajax({
-        url: 'cat',
+        url: 'api/cat',
         data: cat,
         type: 'POST',
         success: (result) => {
@@ -45,7 +45,9 @@ function postCat(cat) {
 
 $(document).ready(function () {
     $('.materialboxed').materialbox();
+    console.log(111);
     getCats();
+
     $('.modal').modal();
     $('#formSubmit').click(() => {
         submitForm();
